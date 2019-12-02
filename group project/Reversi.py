@@ -184,6 +184,17 @@ def check(x, y, COLOUR):
         Result = False
     return (Result, sum)
 
+def check_board():
+    Result = False
+    sum = 0
+    for row in table:
+        for i in range(COLUMN):
+            if row[i] == EMPTY:
+                sum += 1
+    if sum != 0:
+        Result = True
+    return Result
+
 def check_available_step(COLOUR, status):
     '''
     check_available_step(COLOUR) returns whether there is valid coord on the board that can flip at least one piece and show the available steps in this turn.
@@ -254,13 +265,13 @@ def display_chess(COLOUR):
     #Keep asking player to enter a coord until player enters a valid coord(the result is true)
     #Set the result false at first
     result = False
-    while not result:
+    while not(result):
         print("You must enter a valid coordinate to flip the opponent's chess")
 	#Make the input answer two integers
         coord = enter_a_coord()
 	#Assign values to the X-coord and Y-coord
         (X,Y) = coord
-        result = check(X,Y,COLOUR)
+        (result,sum) = check(X,Y,COLOUR)
     #Now we can flip the chess
     flip_chess(X, Y, COLOUR)
 
@@ -275,7 +286,7 @@ def count(COLOUR):
     #Check each line in the list
     for row in table:
 	#Count the number of selected item in each line and add it to the sum
-        sum += row.count(CUR_COLOUR)
+        sum += row.count(COLOUR)
     #Show the number of the item
     print("numbers of " + COLOUR + ": " + str(sum))
     #The 
@@ -318,9 +329,12 @@ def change_player(COLOUR):
 def play(mode):
     print_table()
     colour = PLAYER_LUNAR
-    while check_available_step(PLAYER_LUNAR,0) or check_available_step(PLAYER_SOLAR,0):
-        if not(check_available_step(colour,0)):
-            cur_colour = change_player(colour)
+    (Result_X,x,y) = check_available_step(PLAYER_LUNAR,0)
+    (Result_O,x,y) = check_available_step(PLAYER_SOLAR,0)
+    while Result_O or Result_X:
+        (Result, x, y) = check_available_step(colour,0)
+        if not(Result):
+            colour = change_player(colour)
         if mode == MODE_ONE and colour == PLAYER_SOLAR:
             (Result, x, y) = check_available_step(colour,0)
             print("AI placed a chess on (" + str(x) + "," + str(y) + ").")
@@ -330,6 +344,8 @@ def play(mode):
             check_available_step(colour,1)
             display_chess(colour)
         colour = change_player(colour)
+        if not(check_board()):
+            break
     print("No available step on the board.")
     show_result()
 

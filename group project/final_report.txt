@@ -1,0 +1,89 @@
+CSCA20 Project Report: Fall 2019
+
+You will submit a copy of this report on Quercus each week between now and the end of the project. Each team member will need to submit a copy, so that we can go back and see what you've done over time. Your project may (and probably will) change as you progress, and that's okay, but we want to be able to track that progression.
+
+Team Member A
+-------------
+First Name: Jiale
+Last Name: Shang
+Student Number: 1006580022
+UofT E-mail Address: jiale.shang@mail.utoronto.ca
+
+
+Team Member B
+-------------
+First Name: Shehnin	
+Last Name: Mojassam
+Student Number:1003136420
+UofT E-mail Address:shehnin.mojassam@mail.utoronto.ca
+
+Team Member C (Optional)
+-------------
+First Name: 
+Last Name:
+Student Number:
+UofT E-mail Address:
+
+Team Member D (Optional)
+-------------
+First Name: 
+Last Name:
+Student Number:
+UofT E-mail Address:
+
+
+Project Plan
+--------
+
+Project Title: Reversi
+
+
+Provide a one paragraph description of your project:
+
+This project will be about a game called reversi. We will write it in python. Reversi is a strategy based board game that is plated on an 8x8 uncheckered board. There are sixty-four identical game pieces called disks, which have two sides(light and dark). Players take turns placing disks on the board with their assigned color facing up. They also turn over as many of their opponent's pieces as possible. 
+The objective of the game is to have majority of disks turned up to display your color. This happens when the last empty square is filled. We will mainly divide this project into three parts: Part one will be storing the data(using "" for empty space,"O" for white disks and "X" for black). Part two will be checking the status of the disks. Finally, part three will be playing the game. We will use the techniques we learned in lab8. 
+
+Week 2 Plan
+What will you have done before you arrive at your tutorial next week?
+A function to check whether the game ends at the current turn:
+	-check if there are available steps for player one and player two
+	-check if there is empty room on the board for the chess pieces.
+
+What will you have done before you leave your tutorial next week?
+A function to ask the players to enter a valid coord and display the chess.
+A function to change the current colour when a turn ends.
+Chain all the blocks together to make a complete game.
+
+What is your backup plan if things don’t work out as planned?
+We can use a much simpler game like Tic-Tac-Toe(3×3 board) instead of reversi. This is because reversi might take us a longer time to break through. Another alternative that we can use is write an easy code of counting prime numbers as we originally thought of doing. 
+
+
+  Weekly Reports
+          --------------
+<In this space, provide a report each week of what worked and what didn't, and what (if any) changes were made to your proposal)>
+
+
+Week 1: 
+We built our group and spent all the lab time to figure out what our project should be. At first, we wanted to build a program that could find prime Numbers, but we soon realized that this was too easy to earn the ambition points. We then did some research and came up with another plan. Our plan was changed and at the end of the week we decided to make a board game called reversi. This would help us test our abilities in a better way. 
+ 
+Week 2:
+The materials we found don't really match our project. So we started building our own code. The 8*8 chess board has been built in the form of ASCII Art. And we have written a simple logic code to check the board and flip the pieces.
+
+Week 3:
+Our project is almost done. We have written a logic block to check whether the game ends(no empty place on the board or no available step for both players). We are considering adding some AI function to the game and make an extra mode of "Human vs. AI". And we are working on our presentation and video this week.
+
+References
+----------
+We built our project based on the rules of Reversi on wikipedia.
+https://en.wikipedia.org/wiki/Reversi
+
+
+Repo & Video
+------------
+ 
+
+Our Python code is uploaded to:
+https://github.com/shang8024/Reversi
+
+And our video is at:
+https://www.youtube.com/watch?v=L9NKxFTb0uw
